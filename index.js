@@ -60,9 +60,14 @@ let allWagesFor = function(){
 }
 let findEmployeeByFirstName = function(srcArray, firstName){
     return srcArray.find(function (rec){
-        return re.firstName === firstName;
+        return rec.firstName === firstName;
     })
-    
+    }
+    let calculatePayroll = function(arrayOfEmployeeRecords){
+        return arrayOfEmployeeRecords.reduce(function(memo, rec){
+            return memo + allWagesFor.call(rec)
+
+        }, 0);
     }
 
 /*
